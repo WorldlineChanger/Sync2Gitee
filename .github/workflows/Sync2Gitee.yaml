@@ -1,0 +1,25 @@
+on:
+  push:
+  pull_request_target:
+    branches: [master]
+    
+name: 自动同步代码到 Gitee
+jobs:
+  run:
+    name: Run
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout source codes
+      uses: actions/checkout@v1
+      
+    - name: 自动同步代码到 Gitee
+      uses: Yikun/hub-mirror-action@master
+      with:
+        src: github/WorldlineChanger
+        dst: gitee/WorldlineChanger
+        dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
+        dst_token:  ${{ secrets.GITEE_TOKEN }}
+        cache_path: /github/workspace/hub-mirror-cache
+        force_update: true
+        debug: true
+        timeout: '1h'
