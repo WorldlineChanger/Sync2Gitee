@@ -25,3 +25,5 @@ jobs:
         cache_path: /github/workspace/hub-mirror-cache
         force_update: true
         debug: true
+        
+    - uses: gautamkrishnar/keepalive-workflow@master
