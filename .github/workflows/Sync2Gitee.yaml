@@ -24,5 +24,6 @@ jobs:
           cache_path: /github/workspace/hub-mirror-cache
           force_update: true
           debug: true
+          black_list: 'bibabo,GlaDOS-auto-checkin,GLaDOS-CheckIn,GLaDOS_Checkin,GLD_Ck,Grasscutter,v2ray-core,v2rayN,Xray-core,v2fly-github-io,Grasscutter'
           
       - uses: gautamkrishnar/keepalive-workflow@master
